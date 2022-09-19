@@ -11,7 +11,7 @@ spec:
   - name: train_iris
     kind: job
     image: mlrun/mlrun
-    handler: train.train
+    handler: train.train_iris
     with_repo: true
   - url: serving.yaml
     name: serving
