@@ -1,0 +1,23 @@
+kind: project
+metadata:
+  name: quick-start-tutorial-shapira
+spec:
+  functions:
+  - name: prep_data
+    kind: job
+    image: mlrun/mlrun
+    handler: prep_data.prep_data
+    with_repo: true
+  - name: train_iris
+    kind: job
+    image: mlrun/mlrun
+    handler: train.train
+    with_repo: true
+  - url: serving.yaml
+    name: serving
+    with_repo: true
+  workflows: []
+  artifacts: []
+  source: git://github.com/GiladShapira94/quick-start.git
+  load_source_on_run: true
+  desired_state: online
